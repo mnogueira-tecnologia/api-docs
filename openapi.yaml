@@ -41,12 +41,11 @@ paths:
           description: Identificador da requisição assíncrona retornado na primeira chamada e utilizado para consultar o resultado posteriormente
           schema:
             type: integer
-            example: 12345
       security:
         - bearerAuth: []
       responses:
         '200':
-          description: Retorno da consulta
+          description: Exemplo de Retorno da consulta
           content:
             application/json:
               examples:
@@ -56,12 +55,24 @@ paths:
                     info: "Aguardando retorno da SEFAZ. Consulte novamente em instantes."
                     request_id: 12345
                 sucesso:
-                  summary: Sucesso
+                  summary: Sucesso (exemplo real)
                   value:
-                    numero_inscricao: "00000000000191"
-                    razao_nome: "EMPRESA EXEMPLO LTDA"
-                    fantasia: "EMPRESA EXEMPLO"
-                    situacao_cadastral: "ATIVA"
+                    info: "Sucesso"
+                    data:
+                      numero_inscricao: "00.000.000/0001-91"
+                      razao_nome: "BANCO DO BRASIL SA"
+                      matriz_filial: "1 - MATRIZ"
+                      fantasia: "DIRECAO GERAL"
+                      csit_cadastral: "02"
+                      xsit_cadastral: "ATIVA"
+                      dt_situacao: "2005-11-03"
+                      cmotivo_sit: "00"
+                      xmotivo_sit: "SEM MOTIVO"
+                      cnatur_juridica: "2038"
+                      xnatur_juridica: "Sociedade de Economia Mista"
+                      dt_ini_ativ: "1966-08-01"
+                      ccnae_princ: "6422100"
+                      xcnae_princ_desc: "Bancos múltiplos, com carteira comercial"...
         '400':
           description: Requisição inválida
         '401':
