@@ -79,6 +79,90 @@ paths:
           description: Não autorizado
         '500':
           description: Erro interno
+   /consulta_cadastro:
+      post:
+      tags:
+      - CNPJ
+      summary: Consulta Cadastro SINTEGRA
+      description: >
+      Consulta dados cadastrais no SINTEGRA por UF.
+      
+      ```
+          Fluxo:
+          - Sem request_id: inicia o processamento
+          - Com request_id: retorna o resultado da consulta
+      
+          É obrigatório informar pelo menos um dos parâmetros: cnpj, cpf ou ie.
+      
+        operationId: consultaSintegra
+      
+        parameters:
+          - name: uf
+            in: query
+            required: true
+            description: Sigla da UF consultada
+            schema:
+              type: string
+              example: "DF"
+      
+          - name: cnpj
+            in: query
+            required: false
+            description: CNPJ do contribuinte
+            schema:
+              type: string
+              example: "00.000.000/0001-91"
+      
+          - name: cpf
+            in: query
+            required: false
+            description: CPF do contribuinte
+            schema:
+              type: string
+              example: "000.000.000-00"
+      
+          - name: ie
+            in: query
+            required: false
+            description: Inscrição estadual do contribuinte
+            schema:
+              type: string
+              example: "123456789"
+      
+          - name: request_id
+            in: query
+            required: false
+            description: Identificador da requisição assíncrona retornado na primeira chamada e utilizado para consultar o resultado posteriormente
+            schema:
+              type: integer
+              example: 12345
+
+  security:
+    - bearerAuth: []
+
+  responses:
+    '200':
+      description: Retorno da consulta SINTEGRA
+      content:
+        application/json:
+          examples:
+            processamento:
+              summary: Consulta em processamento
+              value:
+                info: "Aguardando retorno do SINTEGRA. Consulte novamente em instantes."
+                request_id: 67890
+
+            sucesso:
+              summary: Consulta concluída
+              value:
+                info: "Sucesso"
+                data:
+                  uf: "DF"
+                  cnpj: "00.000.000/0001-91"
+                  ie: "123456789"
+                  situacao: "HABILITADO"
+```
+          
 components:
   securitySchemes:
     bearerAuth:
