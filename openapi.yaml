@@ -72,7 +72,7 @@ paths:
                       xnatur_juridica: "Sociedade de Economia Mista"
                       dt_ini_ativ: "1966-08-01"
                       ccnae_princ: "6422100"
-                      xcnae_princ_desc: "Bancos múltiplos, com carteira comercial"...
+                      xcnae_princ_desc: "Bancos múltiplos, com carteira comercial"
         '400':
           description: Requisição inválida
         '401':
