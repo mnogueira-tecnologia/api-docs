@@ -49,10 +49,6 @@ paths:
           description: Retorno da consulta
           content:
             application/json:
-              schema:
-                oneOf:
-                  - $ref: '#/components/schemas/ProcessamentoResponse'
-                  - $ref: '#/components/schemas/SucessoResponse'
               examples:
                 processamento:
                   summary: Consulta em processamento
@@ -60,7 +56,7 @@ paths:
                     info: "Aguardando retorno da SEFAZ. Consulte novamente em instantes."
                     request_id: 12345
                 sucesso:
-                  summary: Consulta concluída
+                  summary: Sucesso
                   value:
                     numero_inscricao: "00000000000191"
                     razao_nome: "EMPRESA EXEMPLO LTDA"
@@ -78,35 +74,3 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
-  schemas:
-    ProcessamentoResponse:
-      type: object
-      properties:
-        info:
-          type: string
-          description: Mensagem informativa sobre o processamento
-        request_id:
-          type: integer
-          description: Identificador da requisição para consulta posterior
-      required:
-        - info
-        - request_id
-    SucessoResponse:
-      type: object
-      properties:
-        numero_inscricao:
-          type: string
-          description: Número de inscrição do CNPJ (apenas dígitos)
-        razao_nome:
-          type: string
-          description: Razão social ou nome da empresa
-        fantasia:
-          type: string
-          description: Nome fantasia
-        situacao_cadastral:
-          type: string
-          description: Situação cadastral da empresa
-      required:
-        - numero_inscricao
-        - razao_nome
-        - situacao_cadastral
