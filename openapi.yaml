@@ -1,15 +1,42 @@
 openapi: 3.0.0
 info:
-  title: Minha API
+  title: API Consulta CNPJ Receita
   version: 1.0.0
 
 servers:
-  - url: https://jsonplaceholder.typicode.com
+  - url: https://api.arquivo-nfe.com/prod
 
 paths:
-  /users:
-    get:
-      summary: Lista usuários
+  /cnpj_receita:
+    post:
+      summary: Consulta CNPJ na Receita Federal
+      description: Retorna dados cadastrais do CNPJ
+      parameters:
+        - name: cnpj
+          in: query
+          required: true
+          description: CNPJ com máscara
+          schema:
+            type: string
+            example: "00.000.000/0001-91"
+
+        - name: qsa
+          in: query
+          required: false
+          description: Retornar quadro societário (0 ou 1)
+          schema:
+            type: integer
+            example: 0
+
+      security:
+        - bearerAuth: []
+
       responses:
         '200':
-          description: OK
+          description: Sucesso
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
