@@ -15,7 +15,7 @@ paths:
         - name: cnpj
           in: query
           required: true
-          description: CNPJ com máscara
+          description: CNPJ com ou sem máscara
           schema:
             type: string
             example: "00.000.000/0001-91"
@@ -31,7 +31,7 @@ paths:
         - name: request_id
           in: query
           required: false
-          description: Protocolo de registro da consulta para obtenção dos dados de retorno  
+          description: Identificador da requisição assíncrona. Na primeira chamada, a API retorna um request_id indicando que o processamento foi iniciado. Esse mesmo request_id deve ser informado em chamadas posteriores para obter o resultado da consulta.
           schema:
             type: integer
 
