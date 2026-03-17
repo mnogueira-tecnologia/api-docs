@@ -34,7 +34,6 @@ paths:
           description: Protocolo de registro da consulta para obtenção dos dados de retorno  
           schema:
             type: integer
-            example: 123    
 
       security:
         - bearerAuth: []
