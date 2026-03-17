@@ -1,53 +1,20 @@
 openapi: 3.0.0
 info:
-title: API para consulta e validação de empresas no Brasil
+title: API CNPJ
 version: 1.0.0
-
 servers:
 
 * url: https://api.arquivo-nfe.com/prod
-
-paths:
-/cnpj_receita:
-post:
-summary: Consulta CNPJ na Receita Federal
-description: Retorna dados cadastrais do CNPJ
-
-```
+  paths:
+  /cnpj_receita:
+  post:
+  summary: Consulta CNPJ
   parameters:
-    - name: cnpj
-      in: query
-      required: true
-      description: CNPJ com ou sem máscara
-      schema:
-        type: string
-        example: "00.000.000/0001-91"
-
-    - name: qsa
-      in: query
-      required: false
-      description: Retornar quadro societário (0 ou 1)
-      schema:
-        type: integer
-        example: 0
-
-    - name: request_id
-      in: query
-      required: false
-      description: Identificador da requisição assíncrona. Na primeira chamada, a API retorna um request_id indicando que o processamento foi iniciado. Esse mesmo request_id deve ser informado em chamadas posteriores para obter o resultado da consulta.
-      schema:
-        type: integer
-
-  security:
-    - bearerAuth: []
-
+  - name: cnpj
+  in: query
+  required: true
+  schema:
+  type: string
   responses:
-    '200':
-      description: Sucesso
-```
-
-components:
-securitySchemes:
-bearerAuth:
-type: http
-scheme: bearer
+  '200':
+  description: OK
