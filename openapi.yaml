@@ -28,6 +28,14 @@ paths:
             type: integer
             example: 0
 
+        - name: request_id
+          in: query
+          required: false
+          description: Protocolo de registro da consulta solicitada para obtenção dos dados de retorno  
+          schema:
+            type: integer
+            example: 123    
+
       security:
         - bearerAuth: []
 
