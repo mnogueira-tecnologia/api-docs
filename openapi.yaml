@@ -2,19 +2,26 @@ openapi: 3.0.0
 info:
 title: API CNPJ
 version: 1.0.0
+
 servers:
 
 * url: https://api.arquivo-nfe.com/prod
-  paths:
-  /cnpj_receita:
-  post:
-  summary: Consulta CNPJ
+
+paths:
+/cnpj_receita:
+post:
+summary: Consulta CNPJ
+
+```
   parameters:
-  - name: cnpj
-  in: query
-  required: true
-  schema:
-  type: string
+    - name: cnpj
+      in: query
+      required: true
+      schema:
+        type: string
+
   responses:
-  '200':
-  description: OK
+    '200':
+      description: OK
+```
+
