@@ -1,19 +1,112 @@
 openapi: 3.0.0
 info:
-  title: API CNPJ
+  title: API de Consulta de CNPJ na Receita Federal
   version: 1.0.0
+  description: |
+    API para consulta e validação de dados cadastrais de empresas no Brasil.
+    Esta API utiliza processamento assíncrono. Fluxo: envie sem request_id para iniciar,
+    receba o request_id e consulte novamente com ele para obter o resultado.
 servers:
   - url: https://api.arquivo-nfe.com/prod
+tags:
+  - name: CNPJ
+    description: Operações de consulta de CNPJ
 paths:
   /cnpj_receita:
     post:
-      summary: Consulta CNPJ
+      tags:
+        - CNPJ
+      summary: Consulta CNPJ na Receita Federal
+      description: Inicia ou consulta o resultado de uma requisição de CNPJ. Sem request_id inicia processamento. Com request_id retorna o resultado.
+      operationId: consultaCNPJ
       parameters:
         - name: cnpj
           in: query
           required: true
+          description: CNPJ com ou sem máscara
           schema:
             type: string
+            example: "00.000.000/0001-91"
+        - name: qsa
+          in: query
+          required: false
+          description: Indica se deve retornar o quadro societário (QSA). 0 = não, 1 = sim
+          schema:
+            type: integer
+            enum: [0, 1]
+            example: 0
+        - name: request_id
+          in: query
+          required: false
+          description: Identificador da requisição assíncrona retornado na primeira chamada e utilizado para consultar o resultado posteriormente
+          schema:
+            type: integer
+            example: 12345
+      security:
+        - bearerAuth: []
       responses:
         '200':
-          description: OK
+          description: Retorno da consulta
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/ProcessamentoResponse'
+                  - $ref: '#/components/schemas/SucessoResponse'
+              examples:
+                processamento:
+                  summary: Consulta em processamento
+                  value:
+                    info: "Aguardando retorno da SEFAZ. Consulte novamente em instantes."
+                    request_id: 12345
+                sucesso:
+                  summary: Consulta concluída
+                  value:
+                    numero_inscricao: "00000000000191"
+                    razao_nome: "EMPRESA EXEMPLO LTDA"
+                    fantasia: "EMPRESA EXEMPLO"
+                    situacao_cadastral: "ATIVA"
+        '400':
+          description: Requisição inválida
+        '401':
+          description: Não autorizado
+        '500':
+          description: Erro interno
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    ProcessamentoResponse:
+      type: object
+      properties:
+        info:
+          type: string
+          description: Mensagem informativa sobre o processamento
+        request_id:
+          type: integer
+          description: Identificador da requisição para consulta posterior
+      required:
+        - info
+        - request_id
+    SucessoResponse:
+      type: object
+      properties:
+        numero_inscricao:
+          type: string
+          description: Número de inscrição do CNPJ (apenas dígitos)
+        razao_nome:
+          type: string
+          description: Razão social ou nome da empresa
+        fantasia:
+          type: string
+          description: Nome fantasia
+        situacao_cadastral:
+          type: string
+          description: Situação cadastral da empresa
+      required:
+        - numero_inscricao
+        - razao_nome
+        - situacao_cadastral
