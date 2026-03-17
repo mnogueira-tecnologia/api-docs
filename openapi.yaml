@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
 title: API de Consulta de CNPJ na Receita Federal
-description: |
+description: >
 API para consulta e validação de dados cadastrais de empresas no Brasil.
 
 ```
@@ -23,7 +23,7 @@ paths:
 /cnpj_receita:
 post:
 summary: Consulta CNPJ na Receita Federal
-description: |
+description: >
 Inicia ou consulta o resultado de uma requisição de CNPJ.
 
 ```
@@ -50,11 +50,10 @@ Inicia ou consulta o resultado de uma requisição de CNPJ.
     - name: request_id
       in: query
       required: false
-      description: |
+      description: >
         Identificador da requisição assíncrona.
-
-        - Retornado na primeira chamada da API
-        - Deve ser informado para consultar o resultado posteriormente
+        Retornado na primeira chamada da API e deve ser informado
+        para consultar o resultado posteriormente.
       schema:
         type: integer
         example: 12345
@@ -73,7 +72,6 @@ Inicia ou consulta o resultado de uma requisição de CNPJ.
               value:
                 info: "Aguardando retorno da SEFAZ. Consulte novamente em instantes."
                 request_id: 12345
-
             sucesso:
               summary: Consulta concluída
               value:
