@@ -31,7 +31,7 @@ paths:
         - name: request_id
           in: query
           required: false
-          description: Protocolo de registro da consulta solicitada para obtenção dos dados de retorno  
+          description: Protocolo de registro da consulta para obtenção dos dados de retorno  
           schema:
             type: integer
             example: 123    
