@@ -38,7 +38,7 @@ description: Inicia ou consulta o resultado de uma requisição de CNPJ. Sem req
       description: Identificador da requisição assíncrona retornado na primeira chamada e utilizado para consultar o resultado posteriormente
       schema:
         type: integer
-        example: 12345
+        example: 12345 
 
   security:
     - bearerAuth: []
