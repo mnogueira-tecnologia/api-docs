@@ -1,18 +1,6 @@
 openapi: 3.0.0
 info:
-title: API de Consulta de CNPJ na Receita Federal
-description: |
-API para consulta e validação de dados cadastrais de empresas no Brasil.
-
-```
-Esta API utiliza processamento assíncrono.
-
-Fluxo de uso:
-1. Envie a requisição sem o parâmetro request_id para iniciar a consulta
-2. A API retornará um request_id indicando que o processamento foi iniciado
-3. Utilize o request_id em chamadas posteriores para obter o resultado da consulta
-```
-
+title: API para consulta e validação de empresas no Brasil
 version: 1.0.0
 
 servers:
@@ -23,13 +11,9 @@ paths:
 /cnpj_receita:
 post:
 summary: Consulta CNPJ na Receita Federal
-description: |
-Inicia ou consulta o resultado de uma requisição de CNPJ.
+description: Retorna dados cadastrais do CNPJ
 
 ```
-    - Sem request_id: inicia o processamento da consulta
-    - Com request_id: retorna o resultado da consulta previamente iniciada
-
   parameters:
     - name: cnpj
       in: query
@@ -42,7 +26,7 @@ Inicia ou consulta o resultado de uma requisição de CNPJ.
     - name: qsa
       in: query
       required: false
-      description: Indica se deve retornar o quadro societário (QSA). 0 = não, 1 = sim
+      description: Retornar quadro societário (0 ou 1)
       schema:
         type: integer
         example: 0
@@ -50,46 +34,16 @@ Inicia ou consulta o resultado de uma requisição de CNPJ.
     - name: request_id
       in: query
       required: false
-      description: |
-        Identificador da requisição assíncrona.
-
-        - Retornado na primeira chamada da API
-        - Deve ser informado para consultar o resultado posteriormente
+      description: Identificador da requisição assíncrona. Na primeira chamada, a API retorna um request_id indicando que o processamento foi iniciado. Esse mesmo request_id deve ser informado em chamadas posteriores para obter o resultado da consulta.
       schema:
         type: integer
-        example: 12345
 
   security:
     - bearerAuth: []
 
   responses:
     '200':
-      description: Retorno da consulta
-      content:
-        application/json:
-          examples:
-            processamento:
-              summary: Consulta em processamento
-              value:
-                info: "Aguardando retorno da SEFAZ. Consulte novamente em instantes."
-                request_id: 12345
-
-            sucesso:
-              summary: Consulta concluída
-              value:
-                numero_inscricao: "00000000000191"
-                razao_nome: "EMPRESA EXEMPLO LTDA"
-                fantasia: "EMPRESA EXEMPLO"
-                situacao_cadastral: "ATIVA"
-
-    '400':
-      description: Requisição inválida
-
-    '401':
-      description: Não autorizado
-
-    '500':
-      description: Erro interno
+      description: Sucesso
 ```
 
 components:
@@ -97,4 +51,3 @@ securitySchemes:
 bearerAuth:
 type: http
 scheme: bearer
-bearerFormat: JWT
