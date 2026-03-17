@@ -1,0 +1,15 @@
+openapi: 3.0.0
+info:
+  title: Minha API
+  version: 1.0.0
+
+servers:
+  - url: https://jsonplaceholder.typicode.com
+
+paths:
+  /users:
+    get:
+      summary: Lista usuários
+      responses:
+        '200':
+          description: OK
