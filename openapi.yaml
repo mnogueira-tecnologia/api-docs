@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: APIs Arquivo-nfe - Documentação de integração - Teste ao vivo
+  title: APIs Arquivo-Nfe - Documentação de integração - Teste ao vivo
   version: 1.0.0
   description: |
     API para consulta e validação de dados cadastrais de empresas no Brasil.
@@ -84,7 +84,7 @@ paths:
   /consulta_cadastro:
     post:
       tags:
-        - CNPJ
+        - SINTEGRA
       summary: Consulta Cadastro SINTEGRA
       description: |
         Consulta dados cadastrais no SINTEGRA por UF.
