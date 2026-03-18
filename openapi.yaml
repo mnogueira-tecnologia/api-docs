@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: API de Consulta de CNPJ na Receita Federal
+  title: APIs Arquivo-nfe - Documentação de integração - Teste ao vivo
   version: 1.0.0
   description: |
     API para consulta e validação de dados cadastrais de empresas no Brasil.
