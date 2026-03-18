@@ -15,7 +15,7 @@ info:
   
        Bearer SEU_TOKEN
   
-    🔗 Criar conta: [Criar conta](https://portal.arquivo-nfe.com)
+    🔗 [Criar conta](https://portal.arquivo-nfe.com)
 servers:
   - url: https://api.arquivo-nfe.com/prod
 tags:
