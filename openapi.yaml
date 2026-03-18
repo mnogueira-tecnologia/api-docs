@@ -34,15 +34,17 @@ paths:
             - Sem o envio do parâmetro request_id: inicia o processamento
             - Com o envio do parâmetro request_id: retorna o resultado da consulta
 
-        🚀 Teste a API gratuitamente
 
-        1. Crie sua conta grátis no site
-        2. Copie seu token de acesso no meu lateral "Meu Token"
-        3. Clique em "Authorize" e informe:
-      
-           Bearer SEU_TOKEN
-      
-        🔗 [Criar conta](https://portal.arquivo-nfe.com)
+         🚀 Teste a API gratuitamente
+
+         1. Crie sua conta grátis no site
+         2. Copie seu token de acesso no meu lateral "Meu Token"
+         3. Clique em "Authorize" e informe:
+  
+         Bearer SEU_TOKEN
+  
+         🔗 [Criar conta](https://portal.arquivo-nfe.com)
+
       operationId: consultaCNPJ
       parameters:
         - name: cnpj
