@@ -27,13 +27,14 @@ paths:
       tags:
         - CNPJ
       summary: Consulta CNPJ na Receita Federal
-      description: Obtenha dados completos de empresas em segundos.
+      description: |
+         Obtenha dados completos de empresas em segundos.
         
-        Fluxo:
-          - Sem o envio do parâmetro request_id: inicia o processamento
-          - Com o envio do parâmetro request_id: retorna o resultado da consulta
+         Fluxo:
+            - Sem o envio do parâmetro request_id: inicia o processamento
+            - Com o envio do parâmetro request_id: retorna o resultado da consulta
 
-       🚀 Teste a API gratuitamente
+        🚀 Teste a API gratuitamente
 
         1. Crie sua conta grátis no site
         2. Copie seu token de acesso no meu lateral "Meu Token"
