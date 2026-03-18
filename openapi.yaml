@@ -6,6 +6,16 @@ info:
     API para consulta e validação de dados cadastrais de empresas no Brasil.
     Esta API utiliza processamento assíncrono. Fluxo: envie sem request_id para iniciar,
     receba o request_id e consulte novamente com ele para obter o resultado.
+
+    🚀 Teste a API gratuitamente
+
+    1. Crie sua conta grátis no site
+    2. Copie seu token de acesso no meu lateral "Meu Token"
+    3. Clique em "Authorize" e informe:
+  
+       Bearer SEU_TOKEN
+  
+    🔗 Criar conta: https://portal.arquivo-nfe.com
 servers:
   - url: https://api.arquivo-nfe.com/prod
 tags:
@@ -162,3 +172,12 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
+      description: |
+        Informe seu token no formato:
+
+        Bearer SEU_TOKEN
+
+        🔗 Obtenha seu token grátis em:
+          https://portal.arquivo-nfe.com
+          Após o cadastro, faça o login e copie seu TOKEN acessando a página "Meu Token" no menu lateral 
+            
