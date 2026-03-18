@@ -15,7 +15,7 @@ info:
   
        Bearer SEU_TOKEN
   
-    🔗 Criar conta: https://portal.arquivo-nfe.com
+    🔗 Criar conta: [Criar conta](https://portal.arquivo-nfe.com)
 servers:
   - url: https://api.arquivo-nfe.com/prod
 tags:
@@ -178,6 +178,6 @@ components:
         Bearer SEU_TOKEN
 
         🔗 Obtenha seu token grátis em:
-          https://portal.arquivo-nfe.com
+          [Criar conta](https://portal.arquivo-nfe.com)
           Após o cadastro, faça o login e copie seu TOKEN acessando a página "Meu Token" no menu lateral 
             
