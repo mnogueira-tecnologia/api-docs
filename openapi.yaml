@@ -41,7 +41,6 @@ paths:
           description: Identificador da requisição assíncrona retornado na primeira chamada e utilizado para consultar o resultado posteriormente
           schema:
             type: integer
-            example: 12345
       security:
         - bearerAuth: []
       responses:
@@ -116,21 +115,18 @@ paths:
           description: CPF do contribuinte
           schema:
             type: string
-            example: "000.000.000-00"
         - name: ie
           in: query
           required: false
           description: Inscrição estadual do contribuinte
           schema:
             type: string
-            example: "123456789"
         - name: request_id
           in: query
           required: false
           description: Identificador da requisição assíncrona retornado na primeira chamada e utilizado para consultar o resultado posteriormente
           schema:
             type: integer
-            example: 12345
       security:
         - bearerAuth: []
       responses:
