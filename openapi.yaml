@@ -27,7 +27,22 @@ paths:
       tags:
         - CNPJ
       summary: Consulta CNPJ na Receita Federal
-      description: Inicia ou consulta o resultado de uma requisição de CNPJ. Sem request_id inicia processamento. Com request_id retorna o resultado.
+      description: 
+        Obtenha dados completos de empresas em segundos.
+        
+        Fluxo:
+        - Sem o envio do parâmetro request_id: inicia o processamento
+        - Com o envio do parâmetro request_id: retorna o resultado da consulta
+
+       🚀 Teste a API gratuitamente
+
+        1. Crie sua conta grátis no site
+        2. Copie seu token de acesso no meu lateral "Meu Token"
+        3. Clique em "Authorize" e informe:
+      
+           Bearer SEU_TOKEN
+      
+        🔗 [Criar conta](https://portal.arquivo-nfe.com)
       operationId: consultaCNPJ
       parameters:
         - name: cnpj
@@ -99,10 +114,20 @@ paths:
         Consulta dados cadastrais no SINTEGRA por UF.
 
         Fluxo:
-        - Sem request_id: inicia o processamento
-        - Com request_id: retorna o resultado da consulta
+        - Sem o envio do parâmetro request_id: inicia o processamento
+        - Com o envio do parâmetro request_id: retorna o resultado da consulta
 
         É obrigatório informar pelo menos um dos parâmetros: cnpj, cpf ou ie.
+
+        🚀 Teste a API gratuitamente
+
+        1. Crie sua conta grátis no site
+        2. Copie seu token de acesso no meu lateral "Meu Token"
+        3. Clique em "Authorize" e informe:
+      
+           Bearer SEU_TOKEN
+      
+        🔗 [Criar conta](https://portal.arquivo-nfe.com)
       operationId: consultaSintegra
       parameters:
         - name: uf
