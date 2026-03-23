@@ -270,7 +270,7 @@ paths:
           
 
   /NFSE/ultimo_nsu:
-    post:
+    get:
       tags:
         - NFSE
       summary: Último NSU integrado
@@ -309,7 +309,7 @@ paths:
           description: Erro interno
 
   /NFSE/nfse_nsu:
-    post:
+    get:
       tags:
         - NFSE
       summary: Consulta lote a partir do NSU informado
