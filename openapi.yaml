@@ -312,7 +312,7 @@ paths:
     post:
       tags:
         - NFSE
-      summary: Consulta lote por NSU
+      summary: Consulta lote a partir do NSU informado
       description: |
         Consulta o próximo lote de documentos a partir de um NSU informado.
 
@@ -346,12 +346,19 @@ paths:
                   value:
                     info: "Sucesso"
                     nfse:
-                      nNFSE: "99999"
+                      nNFSE: "99991"
                       xLocEmi: "Nome do município da emissão"
                       cLocEmi: "Código do município da emissão"
                       dhEmi: "dd/mm/yyyy hh24:mi:ss"
                       cTribNac: "240101"
                       xTribNac: "Serviços de chaveiros, ..."
+                    nfse:
+                      nNFSE: "99992"
+                      xLocEmi: "Nome do município da emissão"
+                      cLocEmi: "Código do município da emissão"
+                      dhEmi: "dd/mm/yyyy hh24:mi:ss"
+                      cTribNac: "240101"
+                      xTribNac: "Serviços xyz, ..."  
         '400':
           description: Requisição inválida
         '401':
