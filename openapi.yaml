@@ -270,35 +270,19 @@ paths:
           description: Erro interno
           
 
-  /NFSE:
+  /NFSE/ultimo_nsu:
     post:
       tags:
         - NFSE
-      summary: API NFS-e Nacional
+      summary: Último NSU integrado
       description: |
-        Notas fiscais de serviços tomados - Ambiente Nacional
-
-        Fluxo:
-        - Pesquisa último NSU integrado
-        - Consulta lote de documentos a partir de um NSU informado
-        - Repete até não haver mais documentos
-
-        ?? Teste a API gratuitamente
-
-        1. Crie sua conta grátis no site
-        2. Copie seu token de acesso no meu lateral "Meu Token"
-        3. Clique em "Authorize" e informe:
-
-           Bearer SEU_TOKEN
-
-        ?? [Criar conta](https://portal.arquivo-nfe.com)
+        Retorna o último NSU integrado na sua conta ArquivoNfe.
       operationId: nfse_ult_nsu_integrado
-      parameters:
       security:
         - bearerAuth: []
       responses:
         '200':
-          description: Retorna último NSU integrado em sua conta ArquivoNfe
+          description: Retorna último NSU integrado
           content:
             application/json:
               examples:
@@ -315,19 +299,26 @@ paths:
         '500':
           description: Erro interno
 
+  /NFSE/nsu:
+    post:
+      tags:
+        - NFSE
+      summary: Consulta lote por NSU
+      description: |
+        Consulta o próximo lote de documentos a partir de um NSU informado.
       operationId: nfse_nsu
-      parameters: 
+      parameters:
         - name: nsu
           in: query
           required: true
-          description: consulta próximo lote de documentos a partir de um NSU informado
+          description: NSU a partir do qual consultar os documentos
           schema:
             type: integer
       security:
         - bearerAuth: []
       responses:
         '200':
-          description: Retorna lote a partir de um NSU informado
+          description: Retorna lote de documentos
           content:
             application/json:
               examples:
@@ -337,12 +328,11 @@ paths:
                     info: "Sucesso"
                     nfse:
                       nNFSE: "99999"
-                      xLocEmi: "Nome do municípi da emissão"
+                      xLocEmi: "Nome do município da emissão"
                       cLocEmi: "Código do município da emissão"
                       dhEmi: "dd/mm/yyyy hh24:mi:ss"
                       cTribNac: "240101"
                       xTribNac: "Serviços de chaveiros, ..."
-                      ...
         '400':
           description: Requisição inválida
         '401':
