@@ -4,9 +4,7 @@ info:
   version: 1.0.0
   description: |
     API para consulta e validação de dados cadastrais de empresas no Brasil.
-    Esta API utiliza processamento assíncrono. Fluxo: envie sem request_id para iniciar,
-    receba o request_id e consulte novamente com ele para obter o resultado.
-
+    
     Teste a API gratuitamente
 
     1. Crie sua conta grátis no site
