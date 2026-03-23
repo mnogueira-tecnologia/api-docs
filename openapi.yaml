@@ -20,7 +20,6 @@ servers:
   - url: https://api.arquivo-nfe.com/prod
 tags:
   - name: CNPJ
-    description: Operações de consulta de CNPJ
 paths:
   /cnpj_receita:
     post:
