@@ -7,7 +7,7 @@ info:
     Esta API utiliza processamento assíncrono. Fluxo: envie sem request_id para iniciar,
     receba o request_id e consulte novamente com ele para obter o resultado.
 
-    ?? Teste a API gratuitamente
+    Teste a API gratuitamente
 
     1. Crie sua conta grátis no site
     2. Copie seu token de acesso no meu lateral "Meu Token"
@@ -15,7 +15,7 @@ info:
   
        Bearer SEU_TOKEN
   
-    ?? [Criar conta](https://portal.arquivo-nfe.com)
+    [Criar conta](https://portal.arquivo-nfe.com)
 servers:
   - url: https://api.arquivo-nfe.com/prod
 tags:
@@ -34,7 +34,7 @@ paths:
             - Com o envio do parâmetro request_id: retorna o resultado da consulta
 
 
-         ?? Teste a API gratuitamente
+         Teste a API gratuitamente
 
          1. Crie sua conta grátis no site
          2. Copie seu token de acesso no meu lateral "Meu Token"
@@ -42,7 +42,7 @@ paths:
   
          Bearer SEU_TOKEN
   
-         ?? [Criar conta](https://portal.arquivo-nfe.com)
+         [Criar conta](https://portal.arquivo-nfe.com)
 
       operationId: consultaCNPJ
       parameters:
@@ -120,7 +120,7 @@ paths:
 
         É obrigatório informar pelo menos um dos parâmetros: cnpj, cpf ou ie.
 
-        ?? Teste a API gratuitamente
+        Teste a API gratuitamente
 
         1. Crie sua conta grátis no site
         2. Copie seu token de acesso no meu lateral "Meu Token"
@@ -128,7 +128,7 @@ paths:
       
            Bearer SEU_TOKEN
       
-        ?? [Criar conta](https://portal.arquivo-nfe.com)
+        [Criar conta](https://portal.arquivo-nfe.com)
       operationId: consultaSintegra
       parameters:
         - name: uf
@@ -204,7 +204,7 @@ paths:
         - Sem o envio do parâmetro request_id: inicia o processamento
         - Com o envio do parâmetro request_id: retorna o resultado da consulta
 
-        ?? Teste a API gratuitamente
+        Teste a API gratuitamente
 
         1. Crie sua conta grátis no site
         2. Copie seu token de acesso no meu lateral "Meu Token"
@@ -212,7 +212,7 @@ paths:
       
            Bearer SEU_TOKEN
       
-        ?? [Criar conta](https://portal.arquivo-nfe.com)
+        [Criar conta](https://portal.arquivo-nfe.com)
       operationId: consultaCadesp
       parameters:
         - name: cnpj
@@ -279,6 +279,6 @@ components:
 
         Bearer SEU_TOKEN
 
-        ?? Obtenha seu token grátis em:
+        Obtenha seu token grátis em:
           [Criar conta](https://portal.arquivo-nfe.com)
           Após o cadastro, faça o login e copie seu TOKEN acessando a página "Meu Token" no menu lateral 
