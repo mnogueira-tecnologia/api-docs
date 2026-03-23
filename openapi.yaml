@@ -196,7 +196,7 @@ paths:
     post:
       tags:
         - CADESP
-      summary: API Consulta CADESP (SEFAZ-SP)
+      summary: Consulta CADESP (SEFAZ-SP)
       description: |
         Consulta Situação Cadastral de Contribuintes ICMS
 
