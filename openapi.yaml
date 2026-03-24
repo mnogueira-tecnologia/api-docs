@@ -331,6 +331,7 @@ paths:
           description: NSU a partir do qual consultar os documentos
           schema:
             type: integer
+            example: 0
       security:
         - bearerAuth: []
       responses:
