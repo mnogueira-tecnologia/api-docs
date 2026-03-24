@@ -429,14 +429,14 @@ paths:
                     lista_nfse:
                       ocorrencias: 25
                       nfse:
-                        - provedor: "PRODAM
+                        - provedor: "PRODAM"
                           nNFSE: "99991"
                           cTrib: "03158"
                           xTrib: "Datilografia, digitação..."
                           ambGer: 1
                           xambGer: "Sistema Próprio do município"
                         
-                        - provedor: "PRODAM
+                        - provedor: "PRODAM"
                           nNFSE: "99992"
                           cTrib: "03159"
                           xTrib: "XXXXXXXXXXXX"
