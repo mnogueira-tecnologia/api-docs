@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: APIs Arquivo-Nfe - Documentação de integração - Teste ao vivo
+  title: APIs ArquivoNfe - Documentação de integração - Teste ao vivo
   version: 1.0.0
   description: |
     API para consulta e validação de dados cadastrais de empresas no Brasil.
@@ -270,7 +270,7 @@ paths:
   /NFSE/ultimo_nsu:
     get:
       tags:
-        - NFSE
+        - NFSE Nacional
       summary: Último NSU integrado
       description: |
         Retorna o último NSU integrado na sua conta ArquivoNfe.
@@ -309,7 +309,7 @@ paths:
   /NFSE/nfse_nsu:
     get:
       tags:
-        - NFSE
+        - NFSE Nacional
       summary: Consulta lote a partir do NSU informado
       description: |
         Consulta o próximo lote de documentos a partir de um NSU informado.
@@ -371,7 +371,6 @@ paths:
         - NFSE Paulistana
       summary: Consulta Notas fiscais de serviços tomados - Nota do Milhão Prefeitura de São Paulo
       description: |
-        Consulta Notas fiscais de serviços tomados - Nota do Milhão Prefeitura de São Paulo
 
         Teste a API gratuitamente
 
