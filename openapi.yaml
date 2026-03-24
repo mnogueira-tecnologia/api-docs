@@ -364,6 +364,94 @@ paths:
         '500':
           description: Erro interno
 
+
+  /NFSE/nfse_periodo:
+    get:
+      tags:
+        - NFSE Paulistana
+      summary: Consulta Notas fiscais de serviços tomados - Nota do Milhão Prefeitura de São Paulo
+      description: |
+        Consulta Notas fiscais de serviços tomados - Nota do Milhão Prefeitura de São Paulo
+
+        Teste a API gratuitamente
+
+         1. Crie sua conta grátis no site
+         2. Copie seu token de acesso no meu lateral "Meu Token"
+         3. Clique em "Authorize" e informe:
+  
+         Bearer SEU_TOKEN
+  
+         [Criar conta](https://portal.arquivo-nfe.com)
+      operationId: nfse_periodo
+      parameters:
+        - name: ibge_cidade
+          in: query
+          required: true
+          description: Código IBGE do município de São Paulo Código fixo : 3550308
+          schema:
+            type: integer
+            example: 3550308
+        - name: dt_ini
+          in: query
+          required: true
+          description: Data inicial de pesquisa no formato DD/MM/YYYY
+          schema:
+            type: string
+            format: date
+            example: "01/10/2024"
+        - name: dt_fim
+          in: query
+          required: true
+          description: Data final de pesquisa no formato DD/MM/YYYY
+          schema:
+            type: string
+            format: date
+            example: "31/10/2024"     
+        - name: page
+          in: query
+          required: true
+          description: Número da página consultada. As notas encontradas serão agrupadas em páginas com até 50 NFS-e. 
+          Para consultar cada uma das páginas, o contribuinte deverá transmitir uma requisição de consulta indicando qual página deseja consultar. 
+          Quando o sistema não retornar ou retornar menos que 50 NFS-e, o contribuinte “saberá” que estas são as últimas para o período consultado 
+          e que portanto está é a última página.
+          schema:
+            type: integer
+            example: 1    
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Retorna lote de documentos
+          content:
+            application/json:
+              examples:
+                sucesso:
+                  summary: Consulta concluída
+                  value:
+                    info: "Sucesso"
+                    lista_nfse:
+                      ocorrencias: 25
+                      nfse:
+                        - provedor: "PRODAM
+                          nNFSE: "99991"
+                          cTrib: "03158"
+                          xTrib: "Datilografia, digitação..."
+                          ambGer: 1
+                          xambGer: "Sistema Próprio do município"
+                        
+                        - provedor: "PRODAM
+                          nNFSE: "99992"
+                          cTrib: "03159"
+                          xTrib: "XXXXXXXXXXXX"
+                          ambGer: 1
+                          xambGer: "Sistema Próprio do município"
+        '400':
+          description: Requisição inválida
+        '401':
+          description: Não autorizado
+        '500':
+          description: Erro interno          
+
 components:
   securitySchemes:
     bearerAuth:
