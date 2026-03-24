@@ -367,7 +367,7 @@ paths:
 
 
   /nfse_periodo:
-    post:
+    get:
       tags:
         - NFSE Paulistana
       summary: Consulta Notas fiscais de serviços tomados - Nota do Milhão Prefeitura de São Paulo
