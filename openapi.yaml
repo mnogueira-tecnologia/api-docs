@@ -366,7 +366,7 @@ paths:
 
 
   /NFSE/nfse_periodo:
-    get:
+    post:
       tags:
         - NFSE Paulistana
       summary: Consulta Notas fiscais de serviços tomados - Nota do Milhão Prefeitura de São Paulo
@@ -387,7 +387,7 @@ paths:
         - name: ibge_cidade
           in: query
           required: true
-          description: Código IBGE do município de São Paulo Código fixo : 3550308
+          description: Código IBGE do município de São Paulo Código fixo 3550308
           schema:
             type: integer
             example: 3550308
