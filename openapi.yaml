@@ -410,10 +410,7 @@ paths:
         - name: page
           in: query
           required: true
-          description: Número da página consultada. As notas encontradas serão agrupadas em páginas com até 50 NFS-e. 
-          Para consultar cada uma das páginas, o contribuinte deverá transmitir uma requisição de consulta indicando qual página deseja consultar. 
-          Quando o sistema não retornar ou retornar menos que 50 NFS-e, o contribuinte “saberá” que estas são as últimas para o período consultado 
-          e que portanto está é a última página.
+          description: Número da página consultada. As notas encontradas serão agrupadas em páginas com até 50 NFS-e. Para consultar cada uma das páginas, o contribuinte deverá transmitir uma requisição de consulta indicando qual página deseja consultar. Quando o sistema não retornar ou retornar menos que 50 NFS-e, o contribuinte “saberá” que estas são as últimas para o período consultado e que portanto está é a última página.
           schema:
             type: integer
             example: 1    
