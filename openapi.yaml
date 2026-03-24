@@ -211,7 +211,7 @@ paths:
            Bearer SEU_TOKEN
       
         [Criar conta](https://portal.arquivo-nfe.com)
-      operationId: consultaCadesp
+      operationId: cadesp
       parameters:
         - name: cnpj
           in: query
@@ -267,7 +267,7 @@ paths:
           description: Erro interno
           
 
-  /NFSE/ultimo_nsu:
+  /nfse_ult_nsu_integrado:
     get:
       tags:
         - NFSE Nacional
@@ -306,7 +306,7 @@ paths:
         '500':
           description: Erro interno
 
-  /NFSE/nfse_nsu:
+  /nfse_nsu:
     get:
       tags:
         - NFSE Nacional
@@ -365,7 +365,7 @@ paths:
           description: Erro interno
 
 
-  /NFSE/nfse_periodo:
+  /nfse_periodo:
     post:
       tags:
         - NFSE Paulistana
