@@ -15,7 +15,7 @@ info:
   
     [Criar conta](https://portal.arquivo-nfe.com)
 
-  observação: Todos os parâmetros informados às APIs devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Os valores podem ser enviados com ou sem máscara, conforme especificado na documentação de cada API. 
+    **Observação:** Todos os parâmetros informados às APIs devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Os valores podem ser enviados com ou sem máscara, conforme especificado na documentação de cada API. 
 servers:
   - url: https://api.arquivo-nfe.com/prod
 tags:
@@ -44,7 +44,7 @@ paths:
   
          [Criar conta](https://portal.arquivo-nfe.com)
 
-      observação: Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
+         **Observação:** Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
 
       operationId: consultaCNPJ
       parameters:
@@ -132,7 +132,7 @@ paths:
       
         [Criar conta](https://portal.arquivo-nfe.com)
 
-      observação: Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
+        **Observação:** Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
 
       operationId: consultaSintegra
       parameters:
@@ -219,7 +219,7 @@ paths:
       
         [Criar conta](https://portal.arquivo-nfe.com)
 
-      observação: Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
+        **Observação:** Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
       
       operationId: cadesp
       parameters:
