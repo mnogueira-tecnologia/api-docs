@@ -44,6 +44,8 @@ paths:
   
          [Criar conta](https://portal.arquivo-nfe.com)
 
+         Observação: Todos os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Os valores podem ser enviados com ou sem máscara, conforme especificado na documentação de cada API.
+
       operationId: consultaCNPJ
       parameters:
         - name: cnpj
@@ -129,6 +131,8 @@ paths:
            Bearer SEU_TOKEN
       
         [Criar conta](https://portal.arquivo-nfe.com)
+
+        Observação: Todos os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Os valores podem ser enviados com ou sem máscara, conforme especificado na documentação de cada API.
       operationId: consultaSintegra
       parameters:
         - name: uf
@@ -213,6 +217,8 @@ paths:
            Bearer SEU_TOKEN
       
         [Criar conta](https://portal.arquivo-nfe.com)
+
+        Observação: Todos os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Os valores podem ser enviados com ou sem máscara, conforme especificado na documentação de cada API.
       operationId: cadesp
       parameters:
         - name: cnpj
