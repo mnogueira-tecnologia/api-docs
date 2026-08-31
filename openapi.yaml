@@ -386,7 +386,133 @@ paths:
         '401':
           description: Não autorizado
         '500':
-          description: Erro interno        
+          description: Erro interno  
+
+    /pgfn_devedores:
+    post:
+      tags:
+        - Devedores da União (PGFN)
+      summary: API Devedores da União (PGFN)
+      description: |
+        Consulta débitos inscritos na Dívida Ativa da União (PGFN) para pessoas físicas e jurídicas. A consulta retorna detalhes completos sobre as inscrições 
+        — natureza das dívidas, valores devidos, situação e data de inscrição — facilitando análise de risco de crédito, onboarding de clientes e fornecedores, 
+        validações de conformidade fiscal e prevenção de fraudes.
+
+        Os dados vêm da lista trimestral oficial de devedores publicada pela PGFN, cobrindo dívida geral/SIDA, previdenciária e FGTS.
+                
+        Fluxo:
+        - Sem o envio do parâmetro request_id: inicia o processamento
+        - Com o envio do parâmetro request_id: retorna o resultado da consulta
+
+        É obrigatório informar pelo menos um dos parâmetros: cnpj ou cpf.
+
+        Teste a API gratuitamente
+
+        1. Crie sua conta grátis no site
+        2. Copie seu token de acesso no meu lateral "Meu Token"
+        3. Clique em "Authorize" e informe:
+      
+           Bearer SEU_TOKEN
+      
+        [Criar conta](https://portal.arquivo-nfe.com)
+
+        **Observação:** Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
+      
+      operationId: pgfn_devedores
+      parameters:
+        - name: cnpj
+          in: query
+          required: false
+          description: CNPJ
+          schema:
+            type: string
+        - name: cpf
+          in: query
+          required: false
+          description: CPF
+          schema:
+            type: string    
+        - name: request_id
+          in: query
+          required: false
+          description: Identificador da requisição assíncrona retornado na primeira chamada e utilizado para consultar o resultado posteriormente
+          schema:
+            type: integer
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Retorno da consulta Devedores da União (PGFN)
+          content:
+            application/json:
+              examples:
+                processamento:
+                  summary: Consulta em processamento
+                  value:
+                    info: "Em processamento. Consulte novamente em instantes."
+                    request_id: 67890
+                sucesso:
+                  summary: Consulta concluída
+                  value:
+                    info: "Sucesso"
+                    pgfn_devedores:
+                      cpf: "99999999999"
+                      dt_resultado: "2026-08-31T15:15:01Z"
+                      fgts:
+                        cpf_cnpj: "XXX123.456XX"
+                        tipo_pessoa: "Pessoa física"
+                        tipo_devedor: "Principal"
+                        nome_devedor: "XXXXXXXXXXXXXXXXXX"
+                        uf_devedor: "SP"
+                        unidade_responsavel: "XXXXXXXXX"
+                        entidade_responsavel: "PGFN"
+                        unidade_inscricao: "XXXXXXXXX"
+                        numero_inscricao: "XYS999999999"
+                        tipo_situacao_inscricao: "Em cobrança"
+                        situacao_inscricao: "INSCRITA"
+                        receita_principal: "Contribuições XYZ (FGTS)"
+                        data_inscricao: "YYYY/MM/DD"
+                        indicador_ajuizado: "NAO"
+                        valor_consolidado: "9999.99"
+                        valor_consolidado_f: "9.999,99"
+                        ...
+                      previdenciario:
+                        cpf_cnpj: "XXX456.789XX"
+                        tipo_pessoa: "Pessoa física"
+                        tipo_devedor: "Principal"
+                        nome_devedor: "XXXXXXXXXXXXXXXXXX"
+                        uf_devedor: "SP"
+                        unidade_responsavel: "XXXXXXXXX"
+                        numero_inscricao: "XYS999999999"
+                        tipo_situacao_inscricao: "Em cobrança"
+                        situacao_inscricao: "AJUIZAMENTO DISTRIBUICAO"
+                        tipo_credito: "OUTROS"
+                        data_inscricao: "YYYY/MM/DD"
+                        indicador_ajuizado: "SIM"
+                        valor_consolidado: "9999.99"
+                        valor_consolidado_f: "9.999,99"
+                        ...
+                      nao previdenciario:
+                        cpf_cnpj: "XXX111.234XX"
+                        tipo_pessoa: "Pessoa física"
+                        tipo_devedor: "CORRESPONSAVEL"
+                        nome_devedor: "XXXXXXXXXXXXXXXXXX"
+                        uf_devedor: "SP"
+                        unidade_responsavel: "XXXXXXXXX"
+                        numero_inscricao: "9999999999999"
+                        tipo_situacao_inscricao: "Em cobrança"
+                        situacao_inscricao: "AJUIZAMENTO DISTRIBUICAO"
+                        receita_principal: "R D Ativa - Multa Isolada"
+                        indicador_ajuizado: "SIM"
+                        valor_consolidado: "9999.99"
+                        valor_consolidado_f: "9.999,99"  
+                      
+        '400':
+          description: Requisição inválida
+        '401':
+          description: Não autorizado
+        '500':
+          description: Erro interno         
           
 
   /nfse_ult_nsu_integrado:
