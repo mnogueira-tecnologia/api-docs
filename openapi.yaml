@@ -475,7 +475,6 @@ paths:
                         indicador_ajuizado: "NAO"
                         valor_consolidado: "9999.99"
                         valor_consolidado_f: "9.999,99"
-                        ...
                       previdenciario:
                         cpf_cnpj: "XXX456.789XX"
                         tipo_pessoa: "Pessoa física"
@@ -491,7 +490,6 @@ paths:
                         indicador_ajuizado: "SIM"
                         valor_consolidado: "9999.99"
                         valor_consolidado_f: "9.999,99"
-                        ...
                       nao previdenciario:
                         cpf_cnpj: "XXX111.234XX"
                         tipo_pessoa: "Pessoa física"
