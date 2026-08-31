@@ -275,6 +275,118 @@ paths:
           description: Não autorizado
         '500':
           description: Erro interno
+
+
+  /fgts_regularidade:
+    post:
+      tags:
+        - FGTS - Regularidade do Empregador
+      summary: API FGTS - Regularidade do Empregador
+      description: |
+        Permite verificar se uma organização está adimplente com suas obrigações junto ao Fundo de Garantia do Tempo de Serviço (FGTS). 
+        A regularidade perante o FGTS é requisito essencial para que empresas possam manter relacionamento com órgãos da administração pública 
+        e instituições financeiras oficiais.
+
+        O serviço retorna informações sobre a situação de conformidade da empresa, incluindo dados cadastrais, períodos de validade da regularidade 
+        e histórico de certificações. Ao verificar a regularidade, a API também fornece acesso ao Certificado de Regularidade do FGTS (CRF), documento 
+        que atesta a conformidade legal da organização.
+
+        Fluxo:
+        - Sem o envio do parâmetro request_id: inicia o processamento
+        - Com o envio do parâmetro request_id: retorna o resultado da consulta
+
+        Teste a API gratuitamente
+
+        1. Crie sua conta grátis no site
+        2. Copie seu token de acesso no meu lateral "Meu Token"
+        3. Clique em "Authorize" e informe:
+      
+           Bearer SEU_TOKEN
+      
+        [Criar conta](https://portal.arquivo-nfe.com)
+
+        **Observação:** Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
+      
+      operationId: fgts_regularidade
+      parameters:
+        - name: cnpj
+          in: query
+          required: false
+          description: CNPJ da organização
+          schema:
+            type: string
+        - name: uf
+          in: query
+          required: true
+          description: UF do estabelecimento
+          schema:
+            type: string
+            example: "SP"    
+        - name: gera_crf
+          in: query
+          required: false
+          description: Define se o PDF do Certificado de regularidade do FGTS (CRF) será gerado. 0 = não, 1 = sim
+          schema:
+            type: integer
+            enum: [0, 1]
+            example: 0
+        - name: pdf_base64
+          in: query
+          required: false
+          description: Define o formato de retorno do PDF do CRF quando gera_pdf = 1. 0 — Retorna uma URL para download do PDF do CRF e 1 — Retorna o conteúdo do PDF codificado em Base64.
+          schema:
+            type: integer
+            enum: [0, 1]
+            example: 0   
+        - name: cons_hist
+          in: query
+          required: false
+          description: Consulte o Histórico do Empregador? 0 = não, 1 = sim. Apresenta os registros dos CRF concedidos nos últimos 24 meses, conforme Manual de Orientações Regularidade do Empregador.
+          schema:
+            type: integer
+            enum: [0, 1]
+            example: 0        
+        - name: request_id
+          in: query
+          required: false
+          description: Identificador da requisição assíncrona retornado na primeira chamada e utilizado para consultar o resultado posteriormente
+          schema:
+            type: integer
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: Retorno da consulta do FGTS Regularidade do Empregador
+          content:
+            application/json:
+              examples:
+                processamento:
+                  summary: Consulta em processamento
+                  value:
+                    info: "Em processamento. Consulte novamente em instantes."
+                    request_id: 67890
+                sucesso:
+                  summary: Consulta concluída
+                  value:
+                    info: "Sucesso"
+                    data:
+                      razao_nome: "XXXXXXXXXXXXXXXXX"
+                      situacao_fgts: "REGULAR"
+                      cnpj: "99.999.999/9999-99"
+                      uf: "SP"
+                      dt_resultado: "DD/MM/YYYY HH24:MI"
+                      numero_crf: "9999999999999999999999"
+                      dt_validade_ini: "DD/MM/YYYY"
+                      dt_validade_fim: "DD/MM/YYYY"
+                      dt_obtencao: "DD/MM/YYYY HH24:MI"
+                      pdf: "https://g120c7c9d7b60c3..."
+                      request_id: 9
+        '400':
+          description: Requisição inválida
+        '401':
+          description: Não autorizado
+        '500':
+          description: Erro interno        
           
 
   /nfse_ult_nsu_integrado:
