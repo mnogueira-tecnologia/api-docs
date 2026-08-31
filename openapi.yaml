@@ -281,7 +281,7 @@ paths:
     post:
       tags:
         - FGTS - Regularidade do Empregador
-      summary: API FGTS - Regularidade do Empregador
+      summary: Regularidade do Empregador
       description: |
         Permite verificar se uma organização está adimplente com suas obrigações junto ao Fundo de Garantia do Tempo de Serviço (FGTS). 
         A regularidade perante o FGTS é requisito essencial para que empresas possam manter relacionamento com órgãos da administração pública 
@@ -392,7 +392,7 @@ paths:
     post:
       tags:
         - Devedores da União (PGFN)
-      summary: API Devedores da União (PGFN)
+      summary: Devedores da União (PGFN)
       description: |
         Consulta débitos inscritos na Dívida Ativa da União (PGFN) para pessoas físicas e jurídicas. A consulta retorna detalhes completos sobre as inscrições 
         — natureza das dívidas, valores devidos, situação e data de inscrição — facilitando análise de risco de crédito, onboarding de clientes e fornecedores, 
