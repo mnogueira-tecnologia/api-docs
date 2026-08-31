@@ -392,7 +392,7 @@ paths:
     post:
       tags:
         - Devedores da União (PGFN)
-      summary: Devedores da União (PGFN)
+      summary: API Devedores da União (PGFN)
       description: |
         Consulta débitos inscritos na Dívida Ativa da União (PGFN) para pessoas físicas e jurídicas. A consulta retorna detalhes completos sobre as inscrições 
         — natureza das dívidas, valores devidos, situação e data de inscrição — facilitando análise de risco de crédito, onboarding de clientes e fornecedores, 
