@@ -281,7 +281,7 @@ paths:
     post:
       tags:
         - FGTS - Regularidade do Empregador
-      summary: Regularidade do Empregador
+      summary: API Regularidade do Empregador
       description: |
         Permite verificar se uma organização está adimplente com suas obrigações junto ao Fundo de Garantia do Tempo de Serviço (FGTS). 
         A regularidade perante o FGTS é requisito essencial para que empresas possam manter relacionamento com órgãos da administração pública 
