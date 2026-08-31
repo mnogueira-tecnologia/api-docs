@@ -388,8 +388,8 @@ paths:
         '500':
           description: Erro interno  
 
-    /pgfn_devedores:
-      post:
+  /pgfn_devedores:
+    post:
       tags:
         - Devedores da União (PGFN)
       summary: API Devedores da União (PGFN)
