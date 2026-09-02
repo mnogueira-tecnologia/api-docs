@@ -7,13 +7,11 @@ info:
     
     Teste a API gratuitamente
 
-    1. Crie sua conta grátis em http://portal.arquivo-nfe.com/
+    1. Crie sua conta grátis no [Site](https://portal.arquivo-nfe.com)
     2. Copie seu token de acesso no meu lateral "Meu Token"
     3. Volte a está página, clique no botão "Authorize" e informe:
   
        SEU_TOKEN
-  
-    [Criar conta](https://portal.arquivo-nfe.com)
 
     **Observação:** Todos os parâmetros informados às APIs devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Os valores podem ser enviados com ou sem máscara, conforme especificado na documentação de cada API. 
 servers:
