@@ -11,7 +11,7 @@ info:
     2. Copie seu token de acesso no meu lateral "Meu Token"
     3. Clique em "Authorize" e informe:
   
-       Bearer SEU_TOKEN
+       SEU_TOKEN
   
     [Criar conta](https://portal.arquivo-nfe.com)
 
@@ -40,7 +40,7 @@ paths:
          2. Copie seu token de acesso no meu lateral "Meu Token"
          3. Clique em "Authorize" e informe:
   
-         Bearer SEU_TOKEN
+         SEU_TOKEN
   
          [Criar conta](https://portal.arquivo-nfe.com)
 
@@ -128,7 +128,7 @@ paths:
         2. Copie seu token de acesso no meu lateral "Meu Token"
         3. Clique em "Authorize" e informe:
       
-           Bearer SEU_TOKEN
+           SEU_TOKEN
       
         [Criar conta](https://portal.arquivo-nfe.com)
 
@@ -215,7 +215,7 @@ paths:
         2. Copie seu token de acesso no meu lateral "Meu Token"
         3. Clique em "Authorize" e informe:
       
-           Bearer SEU_TOKEN
+           SEU_TOKEN
       
         [Criar conta](https://portal.arquivo-nfe.com)
 
@@ -225,18 +225,10 @@ paths:
       parameters:
         - name: cnpj
           in: query
-          required: false
+          required: true
           description: CNPJ do contribuinte
           schema:
             type: string
-        - name: gera_pdf
-          in: query
-          required: false
-          description: Gera PDF do comprovante de inscrição? 0 = não, 1 = sim
-          schema:
-            type: integer
-            enum: [0, 1]
-            example: 0
         - name: request_id
           in: query
           required: false
@@ -301,7 +293,7 @@ paths:
         2. Copie seu token de acesso no meu lateral "Meu Token"
         3. Clique em "Authorize" e informe:
       
-           Bearer SEU_TOKEN
+           SEU_TOKEN
       
         [Criar conta](https://portal.arquivo-nfe.com)
 
@@ -412,7 +404,7 @@ paths:
         2. Copie seu token de acesso no meu lateral "Meu Token"
         3. Clique em "Authorize" e informe:
       
-           Bearer SEU_TOKEN
+           SEU_TOKEN
       
         [Criar conta](https://portal.arquivo-nfe.com)
 
@@ -527,7 +519,7 @@ paths:
          2. Copie seu token de acesso no meu lateral "Meu Token"
          3. Clique em "Authorize" e informe:
   
-         Bearer SEU_TOKEN
+         SEU_TOKEN
   
          [Criar conta](https://portal.arquivo-nfe.com)
       operationId: nfse_ult_nsu_integrado
@@ -566,7 +558,7 @@ paths:
          2. Copie seu token de acesso no meu lateral "Meu Token"
          3. Clique em "Authorize" e informe:
   
-         Bearer SEU_TOKEN
+         SEU_TOKEN
   
          [Criar conta](https://portal.arquivo-nfe.com)
       operationId: nfse_nsu
@@ -625,7 +617,7 @@ paths:
          2. Copie seu token de acesso no meu lateral "Meu Token"
          3. Clique em "Authorize" e informe:
   
-         Bearer SEU_TOKEN
+         SEU_TOKEN
   
          [Criar conta](https://portal.arquivo-nfe.com)
       operationId: nfse_periodo
@@ -704,7 +696,7 @@ components:
       description: |
         Informe seu token no formato:
 
-        Bearer SEU_TOKEN
+        SEU_TOKEN
 
         Obtenha seu token grátis em:
           [Criar conta](https://portal.arquivo-nfe.com)
