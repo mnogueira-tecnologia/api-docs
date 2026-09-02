@@ -7,9 +7,9 @@ info:
     
     Teste a API gratuitamente
 
-    1. Crie sua conta grátis no site
+    1. Crie sua conta grátis em http://portal.arquivo-nfe.com/
     2. Copie seu token de acesso no meu lateral "Meu Token"
-    3. Clique em "Authorize" e informe:
+    3. Volte a está página, clique no botão "Authorize" e informe:
   
        SEU_TOKEN
   
