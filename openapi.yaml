@@ -34,14 +34,12 @@ paths:
 
          Teste a API gratuitamente
 
-         1. Crie sua conta grátis no site
+         1. Crie sua conta grátis no [Site](https://portal.arquivo-nfe.com)
          2. Copie seu token de acesso no meu lateral "Meu Token"
-         3. Clique em "Authorize" e informe:
+         3. Volte a está página, clique no botão "Authorize" e informe:
   
-         SEU_TOKEN
+            SEU_TOKEN
   
-         [Criar conta](https://portal.arquivo-nfe.com)
-
          **Observação:** Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
 
       operationId: consultaCNPJ
@@ -122,14 +120,12 @@ paths:
 
         Teste a API gratuitamente
 
-        1. Crie sua conta grátis no site
+        1. Crie sua conta grátis no [Site](https://portal.arquivo-nfe.com)
         2. Copie seu token de acesso no meu lateral "Meu Token"
-        3. Clique em "Authorize" e informe:
+        3. Volte a está página, clique no botão "Authorize" e informe:
       
            SEU_TOKEN
       
-        [Criar conta](https://portal.arquivo-nfe.com)
-
         **Observação:** Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
 
       operationId: consultaSintegra
@@ -209,14 +205,12 @@ paths:
 
         Teste a API gratuitamente
 
-        1. Crie sua conta grátis no site
+        1. Crie sua conta grátis no [Site](https://portal.arquivo-nfe.com)
         2. Copie seu token de acesso no meu lateral "Meu Token"
-        3. Clique em "Authorize" e informe:
+        3. Volte a está página, clique no botão "Authorize" e informe:
       
            SEU_TOKEN
       
-        [Criar conta](https://portal.arquivo-nfe.com)
-
         **Observação:** Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
       
       operationId: cadesp
@@ -287,14 +281,12 @@ paths:
 
         Teste a API gratuitamente
 
-        1. Crie sua conta grátis no site
+        1. Crie sua conta grátis no [Site](https://portal.arquivo-nfe.com)
         2. Copie seu token de acesso no meu lateral "Meu Token"
-        3. Clique em "Authorize" e informe:
+        3. Volte a está página, clique no botão "Authorize" e informe:
       
            SEU_TOKEN
       
-        [Criar conta](https://portal.arquivo-nfe.com)
-
         **Observação:** Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
       
       operationId: fgts_regularidade
@@ -398,14 +390,12 @@ paths:
 
         Teste a API gratuitamente
 
-        1. Crie sua conta grátis no site
+        1. Crie sua conta grátis no [Site](https://portal.arquivo-nfe.com)
         2. Copie seu token de acesso no meu lateral "Meu Token"
-        3. Clique em "Authorize" e informe:
+        3. Volte a está página, clique no botão "Authorize" e informe:
       
            SEU_TOKEN
       
-        [Criar conta](https://portal.arquivo-nfe.com)
-
         **Observação:** Os parâmetros informados devem conter a quantidade completa de dígitos, inclusive zeros à esquerda quando aplicável. Para os parâmetros que admitirem formatação, os valores podem ser enviados com ou sem máscara. 
       
       operationId: pgfn_devedores
@@ -513,13 +503,12 @@ paths:
 
         Teste a API gratuitamente
 
-         1. Crie sua conta grátis no site
+         1. Crie sua conta grátis no [Site](https://portal.arquivo-nfe.com)
          2. Copie seu token de acesso no meu lateral "Meu Token"
-         3. Clique em "Authorize" e informe:
+         3. Volte a está página, clique no botão "Authorize" e informe:
   
-         SEU_TOKEN
+            SEU_TOKEN
   
-         [Criar conta](https://portal.arquivo-nfe.com)
       operationId: nfse_ult_nsu_integrado
       security:
         - bearerAuth: []
@@ -552,13 +541,12 @@ paths:
 
         Teste a API gratuitamente
 
-         1. Crie sua conta grátis no site
-         2. Copie seu token de acesso no meu lateral "Meu Token"
-         3. Clique em "Authorize" e informe:
+        1. Crie sua conta grátis no [Site](https://portal.arquivo-nfe.com)
+        2. Copie seu token de acesso no meu lateral "Meu Token"
+        3. Volte a está página, clique no botão "Authorize" e informe:
   
-         SEU_TOKEN
+           SEU_TOKEN
   
-         [Criar conta](https://portal.arquivo-nfe.com)
       operationId: nfse_nsu
       parameters:
         - name: nsu
@@ -611,13 +599,12 @@ paths:
 
         Teste a API gratuitamente
 
-         1. Crie sua conta grátis no site
-         2. Copie seu token de acesso no meu lateral "Meu Token"
-         3. Clique em "Authorize" e informe:
+        1. Crie sua conta grátis no [Site](https://portal.arquivo-nfe.com)
+        2. Copie seu token de acesso no meu lateral "Meu Token"
+        3. Volte a está página, clique no botão "Authorize" e informe:
   
-         SEU_TOKEN
+           SEU_TOKEN
   
-         [Criar conta](https://portal.arquivo-nfe.com)
       operationId: nfse_periodo
       parameters:
         - name: ibge_cidade
